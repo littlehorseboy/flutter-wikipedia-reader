@@ -23,7 +23,10 @@ class ArticleView extends StatelessWidget {
             viewModel.summary,
             viewModel.error,
           )) {
-            (true, _, _) => const CircularProgressIndicator(),
+            (true, _, _) => Padding(
+              padding: const EdgeInsets.all(8),
+              child: const CircularProgressIndicator()
+            ),
             (_, _, final Exception e) => Text('Error: $e'),
             // The summary must be non-null in this switch case.
             (_, final summary?, _) => ArticlePage(

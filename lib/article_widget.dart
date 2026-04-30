@@ -15,7 +15,18 @@ class ArticleWidget extends StatelessWidget {
         spacing: 10,
         children: [
           if (summary.hasImage) Image.network(summary.originalImage!.source),
-          const Text('Article content will be displayed here...'),
+          Text(
+            summary.titles.normalized,
+            overflow: TextOverflow.ellipsis,
+            style: Theme.of(context).textTheme.displaySmall,
+          ),
+          if (summary.description != null)
+            Text(
+              summary.description!,
+              overflow: TextOverflow.ellipsis,
+              style: Theme.of(context).textTheme.bodySmall,
+            ),
+          Text(summary.extract),
         ],
       ),
     );
