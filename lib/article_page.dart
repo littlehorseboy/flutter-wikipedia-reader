@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'article_widget.dart';
 import 'summary.dart';
 
 class ArticlePage extends StatelessWidget {
@@ -14,9 +15,15 @@ class ArticlePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SingleChildScrollView(
+    return SingleChildScrollView(
       child: Column(
-        children: [Text('Article content will be displayed here...')],
+        children: [
+          ArticleWidget(summary: summary),
+          ElevatedButton(
+            onPressed: nextArticleCallback,
+            child: const Text('Next random article'),
+          ),
+        ],
       ),
     );
   }
