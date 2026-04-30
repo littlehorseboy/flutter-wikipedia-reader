@@ -13,7 +13,10 @@ class ArticleWidget extends StatelessWidget {
       padding: const EdgeInsets.all(8),
       child: Column(
         spacing: 10,
-        children: [const Text('Article content will be displayed here...')],
+        children: [
+          if (summary.hasImage) Image.network(summary.originalImage!.source),
+          const Text('Article content will be displayed here...'),
+        ],
       ),
     );
   }
