@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'summary.dart';
+import 'article_model.dart';
+import 'article_view_model.dart';
 
 void main() {
   runApp(const MainApp());
@@ -11,6 +12,8 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final viewModel = ArticleViewModel(ArticleModel());
+
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(title: const Text('Wikipedia Flutter')),
